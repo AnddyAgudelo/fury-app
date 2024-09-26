@@ -13,7 +13,7 @@ async def lifespan(app: FastAPI):
     env = settings.ENV
     app.mongodb_client = AsyncIOMotorClient(settings.DB_CONNECTION)
     app.database = app.mongodb_client[settings.DB_NAME]
-    print(f"Started successfully: {env.value}")
+    print(f"Started successfully: {env}")
 
     yield
     print("Application closing...")
